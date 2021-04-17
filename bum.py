@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from random import random
 from login import username, password
 
+
 class bumble_bot():
     def __init__(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
     def login(self):
         self.driver.get('https://bumble.com/app')
 
